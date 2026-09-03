@@ -6,7 +6,7 @@
  */
 (function () {
   var NAV_ITEMS = [
-    { label: "Person",    href: "#person"    },
+    { label: "Personal",    href: "#personal"    },
     { label: "Work",      href: "#work"      },
     { label: "Schooling", href: "#schooling" }
   ];
