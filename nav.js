@@ -30,10 +30,9 @@
   var NAV_CONFIG = {
     primary: [
       { label: "Home", href: "index.html" },
-      { label: "About", href: "about.html" },
-      { label: "Projects", href: "projects.html" },
-      { label: "Blog", href: "blog.html" },
-      { label: "Contact", href: "contact.html" }
+      { label: "Person", href: "person.html" },
+      { label: "Work", href: "work.html" },
+      { label: "School", href: "school.html" }
     ],
     // Secondary nav can differ per top-level section. Key it by
     // the primary page's href; falls back to `default` if no
@@ -42,13 +41,17 @@
       default: [
         { label: "Overview", href: "index.html" }
       ],
-      "projects.html": [
-        { label: "All projects", href: "projects.html" },
-        { label: "Archived", href: "projects-archived.html" }
+      "person.html": [
+        { label: "Background", href: "person.html#background" },
+        { label: "Strengths", href: "person.html#strengths" }
       ],
-      "blog.html": [
-        { label: "Latest posts", href: "blog.html" },
-        { label: "Categories", href: "blog-categories.html" }
+      "work.html": [
+        { label: "McClure Engineering", href: "work.html#mcclure" },
+        { label: "Customer Service", href: "work.html#customer-service" }
+      ],
+      "school.html": [
+        { label: "Fort Dodge Senior High", href: "school.html#fdsh" },
+        { label: "Iowa State University", href: "school.html#isu" }
       ]
     }
   };
