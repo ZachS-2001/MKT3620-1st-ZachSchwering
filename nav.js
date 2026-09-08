@@ -1,12 +1,12 @@
 /**
  * Site navigation — left to right, sticky to the top of every page.
  * Drop <script src="nav.js"></script> before </body> on any page that
- * has sections with id="person", id="work", and id="schooling" and it
+ * has sections with id="personal", id="work", and id="schooling" and it
  * will build, style, and highlight the nav automatically.
  */
 (function () {
   var NAV_ITEMS = [
-    { label: "Person",    href: "#person"    },
+    { label: "Personal",    href: "#personal"    },
     { label: "Work",      href: "#work"      },
     { label: "Schooling", href: "#schooling" }
   ];
