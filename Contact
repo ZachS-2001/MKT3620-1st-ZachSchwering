@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &mdash; Zach Schwering</title>
+<meta name="description" content="Contact Zach Schwering, Marketing senior at Iowa State University, or leave feedback via the form below.">
+<link rel="icon" href="./assets/zs-monogram.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="page-frame">
+  <div class="layout">
+
+    <header class="site-header">
+      <div class="logo"><svg class="logo-mark" viewBox="0 0 200 200" role="img" aria-label="ZS monogram logo" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="94" fill="#ffffff" stroke="#1a1a1a" stroke-width="3"/><circle cx="100" cy="100" r="82" fill="none" stroke="#8a6d3b" stroke-width="1.5"/><line x1="100" y1="12" x2="100" y2="22" stroke="#8a6d3b" stroke-width="2"/><line x1="100" y1="178" x2="100" y2="188" stroke="#8a6d3b" stroke-width="2"/><line x1="12" y1="100" x2="22" y2="100" stroke="#8a6d3b" stroke-width="2"/><line x1="178" y1="100" x2="188" y2="100" stroke="#8a6d3b" stroke-width="2"/><text x="72" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#1a1a1a" opacity="0.92" text-anchor="middle">Z</text><text x="128" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#8a6d3b" text-anchor="middle">S</text><path d="M62,150 C85,158 115,158 138,150" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg> Zach Schwering</div>
+      <div class="info-graphic">
+        Marketing senior at Iowa State University who pairs on-the-ground
+        technical field experience with clear, people-first communication.
+      </div>
+    </header>
+
+    <nav class="primary-nav" data-nav="primary" aria-label="Primary"></nav>
+    <nav class="secondary-nav" data-nav="secondary" aria-label="Secondary"></nav>
+
+    <div class="content-row">
+
+      <aside class="nav-rail">
+        <nav data-nav="rail-primary" aria-label="Primary, sidebar"></nav>
+        <nav data-nav="rail-secondary" aria-label="Secondary, sidebar"></nav>
+      </aside>
+
+      <main class="main-content">
+        <div class="hero-image"><svg class="hero-mark" viewBox="0 0 200 200" role="img" aria-label="ZS monogram" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="94" fill="#ffffff" stroke="#1a1a1a" stroke-width="3"/><circle cx="100" cy="100" r="82" fill="none" stroke="#8a6d3b" stroke-width="1.5"/><line x1="100" y1="12" x2="100" y2="22" stroke="#8a6d3b" stroke-width="2"/><line x1="100" y1="178" x2="100" y2="188" stroke="#8a6d3b" stroke-width="2"/><line x1="12" y1="100" x2="22" y2="100" stroke="#8a6d3b" stroke-width="2"/><line x1="178" y1="100" x2="188" y2="100" stroke="#8a6d3b" stroke-width="2"/><text x="72" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#1a1a1a" opacity="0.92" text-anchor="middle">Z</text><text x="128" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#8a6d3b" text-anchor="middle">S</text><path d="M62,150 C85,158 115,158 138,150" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg></div>
+
+        <h1>Contact</h1>
+
+        <h2 id="contact-info">Get in touch</h2>
+        <p>
+          The best ways to reach me directly are by phone or email. I&rsquo;m
+          happy to talk about internships, marketing projects, or anything
+          from my time at McClure Engineering.
+        </p>
+        <dl class="fact-list">
+          <dt>Phone</dt><dd><a href="tel:+15155718355">515&#8209;571&#8209;8355</a></dd>
+          <dt>Email</dt><dd><a href="mailto:zach2001@iastate.edu">zach2001@iastate.edu</a></dd>
+        </dl>
+
+        <h2 id="feedback-form">Feedback form</h2>
+        <p>
+          Prefer to send a quick note instead? Fill out the form below and
+          it will come straight to me.
+        </p>
+
+        <!--
+          Embedded Google Form.
+          Replace the src below with your own form's embed link:
+          Google Forms > Send > the "<>" embed tab > copy the iframe src URL.
+          Before publishing, in Form Settings > Responses, turn OFF
+          "Restrict to users in [org]" and confirm access is set to
+          "Anyone with the link" so it loads for visitors who are not
+          signed in.
+        -->
+        <div class="form-embed">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSf_REPLACE_WITH_YOUR_FORM_ID/viewform?embedded=true"
+            title="Contact feedback form"
+            loading="lazy">
+            Loading&hellip;
+          </iframe>
+        </div>
+      </main>
+
+      <aside class="sticky-rail">
+        <section>
+          <h2>Quick facts</h2>
+          <dl class="fact-list">
+            <dt>School</dt><dd>Iowa State University</dd>
+            <dt>Major</dt><dd>Marketing</dd>
+            <dt>Graduating</dt><dd>Spring 2027</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Contact</h2>
+          <dl class="fact-list">
+            <dt>Phone</dt><dd><a href="tel:+15155718355">515&#8209;571&#8209;8355</a></dd>
+            <dt>Email</dt><dd><a href="mailto:zach2001@iastate.edu">zach2001@iastate.edu</a></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Connect</h2>
+          <div class="social-icons">
+            <a href="mailto:zach2001@iastate.edu" aria-label="Email">@</a>
+            <a href="tel:+15155718355" aria-label="Phone">Tel</a>
+            <a href="#" aria-label="LinkedIn">In</a>
+          </div>
+        </section>
+      </aside>
+
+    </div>
+
+    <footer class="site-footer">
+      <span>&copy; <span id="year"></span> Zach Schwering. All rights reserved.</span>
+      <span><a href="index.html">Home</a> &middot; <a href="person.html">Personal</a> &middot; <a href="work.html">Work</a> &middot; <a href="school.html">School</a> &middot; <a href="contact.html">Contact</a></span>
+      <span><a href="mailto:zach2001@iastate.edu">zach2001@iastate.edu</a></span>
+    </footer>
+
+  </div>
+</div>
+
+<script src="./nav.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
