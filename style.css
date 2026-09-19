@@ -80,7 +80,7 @@ body {
   padding: 0.5rem 1rem;
 }
 
-.logo img {
+.logo-mark {
   width: 48px;
   height: 48px;
   flex: none;
@@ -114,17 +114,21 @@ body {
 .primary-nav a,
 .secondary-nav a {
   display: block;
-  padding: 0.4rem 0.25rem;
+  padding: 0.4rem 0.6rem;
   color: var(--text);
   text-decoration: none;
   font-size: 0.9rem;
+  border-radius: 3px;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .primary-nav a:hover,
 .secondary-nav a:hover,
 .primary-nav a:focus-visible,
 .secondary-nav a:focus-visible {
-  text-decoration: underline;
+  background-color: var(--line);
+  color: #ffffff;
+  outline: none;
 }
 
 .primary-nav a[aria-current="page"],
@@ -203,10 +207,9 @@ body {
   background: var(--sticky-bg);
 }
 
-.hero-image img {
+.hero-mark {
   width: 120px;
   height: 120px;
-  object-fit: contain;
 }
 
 .main-content h1 {
@@ -263,6 +266,14 @@ body {
   font-size: 0.75rem;
   color: var(--text);
   text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus-visible {
+  background-color: var(--line);
+  color: #ffffff;
+  outline: none;
 }
 
 /* Quick facts / contact list used in the sticky rail */
@@ -374,6 +385,32 @@ body {
   padding: 0.4rem 0.75rem;
   font-size: 0.9rem;
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background-color: var(--line);
+  color: #ffffff;
+  outline: none;
+}
+
+/* ---------------------------------------------------------
+   Embedded Google Form
+   --------------------------------------------------------- */
+.form-embed {
+  border: 2px solid var(--line);
+  background: var(--sticky-bg);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.form-embed iframe {
+  width: 100%;
+  min-height: 900px;
+  border: 1px solid var(--line-soft);
+  background: #ffffff;
+  display: block;
 }
 
 /* ---------------------------------------------------------
