@@ -1,24 +1,40 @@
 /* =========================================================
-   Wireframe-style layout
-   - Faded salmon page background
-   - 10% margin on every edge (the "body or background area")
+   Wireframe-style layout — refined pass
+   - Faded salmon page background, 10% margin on every edge
    - Boxed layout matching: logo/infographic header, primary +
      secondary nav bars, left nav rail, hero + main content,
      right "sticky content" rail, footer
+   - One consistent bronze accent thread ties the monogram,
+     hovers, and small structural marks together
    ========================================================= */
 
 :root {
-  --salmon-bg: #f2d9d0;       /* faded salmon page background */
-  --panel-bg: #ffffff;        /* content boxes */
-  --line: #1a1a1a;            /* wireframe-style black rules */
-  --line-soft: #4a4a4a;
-  --text: #1f1f1f;
-  --text-muted: #555555;
-  --sticky-bg: #faf3f0;
+  /* Palette */
+  --salmon-bg: #f3ded2;       /* faded salmon page background */
+  --panel-bg: #fffdfb;        /* warm paper white, content boxes */
+  --sticky-bg: #faf1ea;       /* slightly warmer panel for the side rail */
+  --ink: #241f1a;             /* warm near-black — structure + body text */
+  --ink-soft: #6e6259;        /* muted secondary text */
+  --rule-soft: #d9c6b8;       /* hairline dividers */
+  --accent: #8a6d3b;          /* the one accent color — bronze, from the monogram */
+  --accent-soft: #efe2ce;     /* tinted accent background for chips/tags */
+  --on-accent: #fffdfb;       /* text color on top of a filled accent */
 
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Layout */
   --edge-margin: 10%;         /* margin on each edge, as requested */
-  --header-h-logo: 110px;
-  --nav-h: 34px;
+  --header-h-logo: 104px;
+  --nav-h: 38px;
+
+  /* Spacing scale */
+  --sp-1: 0.375rem;
+  --sp-2: 0.625rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.25rem;
 }
 
 * {
@@ -32,25 +48,26 @@ html, body {
 
 body {
   background-color: var(--salmon-bg);
-  color: var(--text);
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ---------------------------------------------------------
-   Outer frame: 10% margin on every edge. Everything the
-   wireframe labelled "Body or background area" is simply
-   the visible --salmon-bg showing through this margin.
+   Outer frame: 10% margin on every edge. The salmon
+   background showing through this margin is the wireframe's
+   original "body or background area."
    --------------------------------------------------------- */
 .page-frame {
   margin: var(--edge-margin);
   min-height: 80vh;
 }
 
-/* The bordered wireframe box itself */
 .layout {
-  border: 2px solid var(--line);
+  border: 2px solid var(--ink);
   background: var(--panel-bg);
   display: flex;
   flex-direction: column;
@@ -63,61 +80,66 @@ body {
    --------------------------------------------------------- */
 .site-header {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  border-bottom: 2px solid var(--line);
+  grid-template-columns: 220px 1fr;
+  border-bottom: 2px solid var(--ink);
 }
 
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  border-right: 2px solid var(--line);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  gap: var(--sp-2);
+  border-right: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
   min-height: var(--header-h-logo);
-  padding: 0.5rem 1rem;
+  padding: var(--sp-2) var(--sp-3);
 }
 
 .logo-mark {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   flex: none;
 }
 
 .info-graphic {
   display: flex;
   align-items: center;
-  padding: 0.75rem 1rem;
+  padding: var(--sp-3) var(--sp-4);
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--ink-soft);
+  line-height: 1.55;
 }
 
 .primary-nav,
 .secondary-nav {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--ink);
   min-height: var(--nav-h);
+  display: flex;
+  align-items: center;
 }
 
 .primary-nav ul,
 .secondary-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: var(--sp-1) var(--sp-3);
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: var(--sp-1);
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .primary-nav a,
 .secondary-nav a {
   display: block;
-  padding: 0.4rem 0.6rem;
-  color: var(--text);
+  padding: 0.35rem 0.7rem;
+  color: var(--ink);
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 500;
   border-radius: 3px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -126,20 +148,25 @@ body {
 .secondary-nav a:hover,
 .primary-nav a:focus-visible,
 .secondary-nav a:focus-visible {
-  background-color: var(--line);
-  color: #ffffff;
+  background-color: var(--accent);
+  color: var(--on-accent);
   outline: none;
 }
 
 .primary-nav a[aria-current="page"],
 .secondary-nav a[aria-current="page"] {
   font-weight: 700;
-  text-decoration: underline;
+  color: var(--accent);
 }
 
 .secondary-nav {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--ink-soft);
+}
+
+.secondary-nav a {
+  font-weight: 400;
+  font-size: 0.85rem;
 }
 
 /* ---------------------------------------------------------
@@ -147,22 +174,19 @@ body {
    --------------------------------------------------------- */
 .content-row {
   display: grid;
-  grid-template-columns: 200px 1fr 220px;
+  grid-template-columns: 208px 1fr 232px;
   flex: 1;
 }
 
 .nav-rail {
-  border-right: 2px solid var(--line);
-  padding: 1.25rem 1rem;
-}
-
-.nav-rail h2 {
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
+  border-right: 2px solid var(--ink);
+  padding: var(--sp-4) var(--sp-3);
 }
 
 .nav-rail nav + nav {
-  margin-top: 1.5rem;
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--rule-soft);
 }
 
 .nav-rail ul {
@@ -172,70 +196,102 @@ body {
 }
 
 .nav-rail li + li {
-  margin-top: 0.4rem;
+  margin-top: var(--sp-1);
 }
 
 .nav-rail a {
-  color: var(--text);
+  display: block;
+  padding: 0.3rem 0.4rem;
+  margin: 0 -0.4rem;
+  border-radius: 3px;
+  color: var(--ink);
   text-decoration: none;
+  font-size: 0.92rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .nav-rail a:hover,
 .nav-rail a:focus-visible {
-  text-decoration: underline;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  outline: none;
 }
 
 .nav-rail a[aria-current="page"] {
   font-weight: 700;
+  color: var(--accent);
 }
 
 /* Main content column */
 .main-content {
-  padding: 1.5rem;
+  padding: var(--sp-5) var(--sp-4);
   min-width: 0; /* allow grid child to shrink */
 }
 
 .hero-image {
-  border: 2px solid var(--line);
-  min-height: 160px;
+  border: 2px solid var(--ink);
+  min-height: 168px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--sp-5);
   overflow: hidden;
   background: var(--sticky-bg);
 }
 
 .hero-mark {
-  width: 120px;
-  height: 120px;
+  width: 108px;
+  height: 108px;
 }
 
 .main-content h1 {
-  font-size: 1.5rem;
-  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 var(--sp-4);
 }
 
 .main-content p {
-  max-width: 65ch;
-  color: var(--text);
+  max-width: 62ch;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
 }
 
-/* Right sticky rail: news, adverts, offers, site info, social */
+.main-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: var(--sp-5) 0 var(--sp-2);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.main-content h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: var(--sp-4);
+}
+
+/* Right sticky rail: contact, quick facts, connect */
 .sticky-rail {
-  border-left: 2px solid var(--line);
+  border-left: 2px solid var(--ink);
   background: var(--sticky-bg);
-  padding: 1.25rem 1rem;
+  padding: var(--sp-4) var(--sp-3);
 }
 
 .sticky-rail section + section {
-  margin-top: 1.5rem;
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--rule-soft);
 }
 
 .sticky-rail h2 {
+  font-family: var(--font-display);
   font-size: 0.95rem;
-  margin: 0 0 0.5rem;
+  font-weight: 600;
+  margin: 0 0 var(--sp-2);
+  color: var(--ink);
 }
 
 .sticky-rail ul {
@@ -246,33 +302,39 @@ body {
 }
 
 .sticky-rail li + li {
-  margin-top: 0.35rem;
+  margin-top: var(--sp-1);
+}
+
+.sticky-rail a {
+  color: var(--ink);
 }
 
 .social-icons {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--sp-1);
   flex-wrap: wrap;
 }
 
 .social-icons a {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--line);
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--ink);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-  color: var(--text);
+  font-weight: 600;
+  color: var(--ink);
   text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .social-icons a:hover,
 .social-icons a:focus-visible {
-  background-color: var(--line);
-  color: #ffffff;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
   outline: none;
 }
 
@@ -280,15 +342,15 @@ body {
 .fact-list {
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 0.5rem;
-  row-gap: 0.4rem;
+  column-gap: var(--sp-2);
+  row-gap: var(--sp-1);
   margin: 0;
   padding: 0;
   font-size: 0.85rem;
 }
 
 .fact-list dt {
-  color: var(--text-muted);
+  color: var(--ink-soft);
   font-weight: 600;
   margin: 0;
 }
@@ -299,80 +361,99 @@ body {
 }
 
 .fact-list a {
-  color: var(--text);
+  color: var(--ink);
+}
+
+.fact-list a:hover,
+.fact-list a:focus-visible {
+  color: var(--accent);
 }
 
 /* Skill / strength tags */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--sp-1);
   list-style: none;
-  margin: 1rem 0 0;
+  margin: var(--sp-4) 0 0;
   padding: 0;
 }
 
 .tag-list li {
-  border: 1px solid var(--line);
-  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--ink);
+  padding: 0.3rem 0.7rem;
   font-size: 0.8rem;
-  background: var(--sticky-bg);
+  font-weight: 500;
+  background: var(--accent-soft);
+  color: var(--ink);
 }
 
-/* Simple section heading rule used within main content */
-.main-content h2 {
-  font-size: 1.15rem;
-  margin: 1.75rem 0 0.5rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--line-soft);
-}
-
-.main-content h2:first-of-type {
-  border-top: none;
-  padding-top: 0;
-}
-
+/* Work timeline — a genuine sequence, so it earns a marker */
 .timeline {
   margin: 0;
   padding: 0;
   list-style: none;
+  border-left: 2px solid var(--accent);
 }
 
 .timeline li {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--line-soft);
+  position: relative;
+  padding: 0 0 var(--sp-4) var(--sp-4);
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--panel-bg);
 }
 
 .timeline li:last-child {
-  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .timeline .role {
+  display: block;
   font-weight: 700;
+  color: var(--ink);
 }
 
 .timeline .meta {
   display: block;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
 }
 
 /* ---------------------------------------------------------
    Footer
    --------------------------------------------------------- */
 .site-footer {
-  border-top: 2px solid var(--line);
-  padding: 0.9rem 1.25rem;
+  border-top: 2px solid var(--ink);
+  padding: var(--sp-3) var(--sp-4);
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--ink-soft);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--sp-2);
 }
 
 .site-footer a {
-  color: var(--text-muted);
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 /* ---------------------------------------------------------
@@ -380,18 +461,21 @@ body {
    --------------------------------------------------------- */
 .nav-toggle {
   display: none;
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink);
   background: var(--panel-bg);
-  padding: 0.4rem 0.75rem;
-  font-size: 0.9rem;
+  color: var(--ink);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .nav-toggle:hover,
 .nav-toggle:focus-visible {
-  background-color: var(--line);
-  color: #ffffff;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
   outline: none;
 }
 
@@ -399,16 +483,16 @@ body {
    Embedded Google Form
    --------------------------------------------------------- */
 .form-embed {
-  border: 2px solid var(--line);
+  border: 2px solid var(--ink);
   background: var(--sticky-bg);
-  padding: 1rem;
-  margin: 1.5rem 0;
+  padding: var(--sp-3);
+  margin: var(--sp-4) 0;
 }
 
 .form-embed iframe {
   width: 100%;
   min-height: 900px;
-  border: 1px solid var(--line-soft);
+  border: 1px solid var(--rule-soft);
   background: #ffffff;
   display: block;
 }
@@ -431,7 +515,7 @@ body {
   .sticky-rail {
     border-right: none;
     border-left: none;
-    border-top: 2px solid var(--line);
+    border-top: 2px solid var(--ink);
   }
 
   .site-header {
@@ -440,7 +524,11 @@ body {
 
   .logo {
     border-right: none;
-    border-bottom: 2px solid var(--line);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .main-content h1 {
+    font-size: 1.7rem;
   }
 
   .nav-toggle {
@@ -453,7 +541,7 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: var(--sp-2) 0;
   }
 
   .primary-nav.is-open ul,
