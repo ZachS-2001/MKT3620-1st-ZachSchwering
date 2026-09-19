@@ -30,9 +30,10 @@
   var NAV_CONFIG = {
     primary: [
       { label: "Home", href: "index.html" },
-      { label: "Person", href: "person.html" },
+      { label: "Personal", href: "person.html" },
       { label: "Work", href: "work.html" },
-      { label: "School", href: "school.html" }
+      { label: "School", href: "school.html" },
+      { label: "Contact", href: "contact.html" }
     ],
     // Secondary nav can differ per top-level section. Key it by
     // the primary page's href; falls back to `default` if no
@@ -52,6 +53,10 @@
       "school.html": [
         { label: "Fort Dodge Senior High", href: "school.html#fdsh" },
         { label: "Iowa State University", href: "school.html#isu" }
+      ],
+      "contact.html": [
+        { label: "Get in touch", href: "contact.html#contact-info" },
+        { label: "Feedback form", href: "contact.html#feedback-form" }
       ]
     }
   };
